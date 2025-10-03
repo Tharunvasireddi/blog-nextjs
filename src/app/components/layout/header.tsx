@@ -1,8 +1,8 @@
-"use clinet";
+"use client";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 function Header() {
   const router = useRouter();
   const navItems = [
@@ -44,6 +44,8 @@ function Header() {
           {/*  placeholder for theme togger*/}
           <div className="flex items-center gap-2">
             <Button
+              className="cursor-pointer"
+              variant={'destructive'}
               onClick={() => router.push("/auth")}
             >
               login
