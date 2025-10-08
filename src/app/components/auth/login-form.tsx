@@ -5,6 +5,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Button } from "../ui/button";
 import { Input } from "@/components/ui/input";
@@ -50,6 +51,7 @@ export default function LoginForm() {
               <FormControl>
                 <Input placeholder="Enter your email" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -66,6 +68,7 @@ export default function LoginForm() {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

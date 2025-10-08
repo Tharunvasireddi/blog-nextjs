@@ -6,6 +6,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -38,16 +39,17 @@ export default function RegiserForm() {
       confirmPassword: "",
     },
   });
-   const  onRegisterSubmit = async(values : RegiserFormValues)=>{
-      try {
-        console.log(values)
-      } catch (error) {
-        
-      }
-    }
+  const onRegisterSubmit = async (values: RegiserFormValues) => {
+    try {
+      console.log(values);
+    } catch (error) {}
+  };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onRegisterSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onRegisterSubmit)}
+        className="space-y-4"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -57,6 +59,7 @@ export default function RegiserForm() {
               <FormControl>
                 <Input placeholder="enter your name" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -69,6 +72,7 @@ export default function RegiserForm() {
               <FormControl>
                 <Input placeholder="enter your email" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -81,6 +85,7 @@ export default function RegiserForm() {
               <FormControl>
                 <Input placeholder="enter your Password" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -93,6 +98,7 @@ export default function RegiserForm() {
               <FormControl>
                 <Input placeholder="confirm your password" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
