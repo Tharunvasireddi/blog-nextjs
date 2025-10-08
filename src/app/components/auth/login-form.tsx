@@ -33,9 +33,14 @@ export default function LoginForm() {
     },
   });
 
+  const onSubmit = async (values: LoginFormValues) => {
+    setLoading(true);
+    console.log(values);
+  };
+
   return (
     <Form {...form}>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="email"
