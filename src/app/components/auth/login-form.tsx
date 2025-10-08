@@ -6,6 +6,7 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
+import { Button } from "../ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -54,11 +55,18 @@ export default function LoginForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="Enter your password" {...field} />
+                <Input
+                  type="password"
+                  placeholder="Enter your password"
+                  {...field}
+                />
               </FormControl>
             </FormItem>
           )}
         />
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? "Signing in..." : "Signin"}
+        </Button>
       </form>
     </Form>
   );
